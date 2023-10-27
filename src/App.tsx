@@ -1,11 +1,9 @@
-import "./App.css";
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hello world</p>
-      </header>
+    <div className="grid items-center gap-4 justify-center">
+      <div className="rounded-2xl p-2 flex bg-slate border">
+        <p>Hello world tailwind</p>
+      </div>
     </div>
   );
 }
