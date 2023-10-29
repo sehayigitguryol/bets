@@ -22,6 +22,7 @@ const CartContext = createContext<{
   state: CartState;
   dispatch: Dispatch<CartAction>;
   getIsBetOptionSelected: (bet: Bet, betOptionId: string) => boolean;
+  calculateTotal: () => number;
 }>(undefined);
 
 export const useCartContext = () => {
@@ -71,8 +72,18 @@ export const CartProvider = ({ children }: PropsWithChildren<any>) => {
     );
   };
 
+  const calculateTotal = (): number => {
+    return state.length > 0
+      ? state.reduce((total, item) => {
+          return total * parseFloat(item.betOption.O);
+        }, 1)
+      : 0;
+  };
+
   return (
-    <CartContext.Provider value={{ state, dispatch, getIsBetOptionSelected }}>
+    <CartContext.Provider
+      value={{ state, dispatch, getIsBetOptionSelected, calculateTotal }}
+    >
       {children}
     </CartContext.Provider>
   );

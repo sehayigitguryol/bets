@@ -1,13 +1,17 @@
 import BetsList from "./Bets/BetsList";
+import Cart from "./Cart/Cart";
 import { CartProvider } from "./context";
 
 function App() {
   return (
-    <div className="p-6">
-      <CartProvider>
+    <CartProvider>
+      <div className="p-6 flex gap-2">
         <BetsList />
-      </CartProvider>
-    </div>
+        <div className="fixed top-4 right-4" style={{ width: "250px" }}>
+          <Cart />
+        </div>
+      </div>
+    </CartProvider>
   );
 }
 
