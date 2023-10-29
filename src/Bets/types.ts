@@ -12,25 +12,25 @@ export type BetGroup = {
 };
 
 export type ApiBet = {
+  C: string;
   D: string;
   DAY: string;
   LN: string;
-  C: string;
-  T: string;
   N: string;
   NID: string;
   OCG: { [key: string]: BetGroup };
+  T: string;
 };
 
 export type Bet = {
+  C: string;
   D: string;
   DAY: string;
   LN: string;
-  C: string;
-  T: string;
+  MBS: string;
   N: string;
   NID: string;
-  MBS: string;
+  T: string;
   betOptions: BetOption[];
 };
 

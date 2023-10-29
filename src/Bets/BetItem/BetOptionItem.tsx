@@ -1,15 +1,15 @@
-import clsx from "clsx";
-import { useCartContext } from "../../context";
+import { useCartContext } from "../../Context/CartProvider";
 import { Bet, BetOption } from "../types";
+import clsx from "clsx";
 
 type Props = {
-  optionName: string;
   bet: Bet;
-  betOption: BetOption | undefined;
+  betOption: BetOption;
+  optionName: string;
 };
 
 function BetOptionItem(props: Props) {
-  const { optionName, betOption, bet } = props;
+  const { bet, betOption, optionName } = props;
 
   const { dispatch, getIsBetOptionSelected } = useCartContext();
 
@@ -18,30 +18,31 @@ function BetOptionItem(props: Props) {
   const handleOptionClick = () => {
     if (isSelected) {
       dispatch({
-        type: "REMOVE_FROM_CART",
         betId: bet.NID,
         betOptionId: betOption.ID,
+        type: "REMOVE_FROM_CART",
       });
     } else {
       dispatch({
-        type: "ADD_TO_CART",
         bet,
         betOption,
+        type: "ADD_TO_CART",
       });
     }
   };
 
   return (
-    <div className="grid gap-2 w-10 justify-center">
+    <div className="grid w-10 justify-center gap-2">
       <h4 className="justify-self-center">{optionName}</h4>
       {betOption ? (
         <button
-          onClick={handleOptionClick}
           className={clsx({
-            "bg-yellow-300": isSelected,
             "bg-slate-200": !isSelected,
+            "bg-yellow-300": isSelected,
             "rounded-md p-1": true,
           })}
+          onClick={handleOptionClick}
+          type="button"
         >
           {betOption.O}
         </button>

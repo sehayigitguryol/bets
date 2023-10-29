@@ -1,11 +1,11 @@
-import { useCartContext } from "../context";
+import { useCartContext } from "../Context/CartProvider";
 
 function Cart() {
   const { calculateTotal, state: items } = useCartContext();
   const total = calculateTotal();
-  console.log(total);
+
   return (
-    <div className="grid gap-2 rounded-xl p-2 border border-slate-700 bg-blue-100">
+    <div className="grid gap-2 rounded-xl border border-slate-700 bg-blue-100 p-2">
       {items.map((item) => (
         <div className="grid gap-1" key={item.bet.NID}>
           <h4>{`Maç: ${item.bet.N}`}</h4>

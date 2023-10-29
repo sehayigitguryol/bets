@@ -12,7 +12,7 @@ function BetItem(props: Props) {
   const { bet } = props;
 
   return (
-    <div className="border border-solid p-2 rounded-xl bg-slate-100 flex gap-2">
+    <div className="flex gap-2 rounded-xl border border-solid bg-slate-100 p-2">
       <MatchDetail bet={bet} />
       <Comments />
       <MinBetCount bet={bet} />
@@ -22,9 +22,9 @@ function BetItem(props: Props) {
         console.log({ bet, betOption, optionName });
         return (
           <BetOptionItem
-            key={optionName}
             bet={bet}
             betOption={betOption}
+            key={optionName}
             optionName={optionName}
           />
         );

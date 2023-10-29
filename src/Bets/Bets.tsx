@@ -1,9 +1,9 @@
-import BetsList from "./BetsList";
-import { useGetBetsQuery } from "./queries";
 import { Bet } from "./types";
+import { useGetBetsQuery } from "./queries";
+import BetsList from "./BetsList";
 
 function Bets() {
-  const { isLoading, data } = useGetBetsQuery();
+  const { data, isLoading } = useGetBetsQuery();
 
   const bets: Bet[] = data ?? [];
 
