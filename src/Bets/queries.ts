@@ -10,7 +10,7 @@ export const useGetBetsQuery = () => {
         "https://nesine-case-study.onrender.com/bets"
       );
 
-      return response.data.slice(0, 20);
+      return response.data;
     },
     refetchOnMount: false,
     refetchOnWindowFocus: false,
