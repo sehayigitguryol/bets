@@ -1,9 +1,12 @@
 import BetsList from "./Bets/BetsList";
+import { CartProvider } from "./context";
 
 function App() {
   return (
     <div className="p-6">
-      <BetsList />
+      <CartProvider>
+        <BetsList />
+      </CartProvider>
     </div>
   );
 }

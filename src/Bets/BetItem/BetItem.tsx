@@ -19,10 +19,11 @@ function BetItem(props: Props) {
       {betOptionNames.map((optionName) => {
         const betOption =
           bet.betOptions.find((option) => option.N === optionName) ?? undefined;
-
+        console.log({ bet, betOption, optionName });
         return (
           <BetOptionItem
             key={optionName}
+            bet={bet}
             betOption={betOption}
             optionName={optionName}
           />

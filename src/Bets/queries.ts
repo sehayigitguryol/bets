@@ -16,7 +16,6 @@ export const useGetBetsQuery = () => {
     refetchOnWindowFocus: false,
     select: (apiBets) =>
       apiBets.map((apiBet) => {
-        console.log({ apiBet, MBS: Object.values(apiBet.OCG)[0].MBS });
         const allBetOptions = collectBetOptions(apiBet);
         const bet: Bet = {
           ...apiBet,

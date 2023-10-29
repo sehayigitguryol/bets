@@ -42,8 +42,6 @@ export const betOptionNames: string[] = [
   "Alt",
   "Üst",
   "H1",
-  "1",
-  "2",
   "H2",
   "1-X",
   "1-2",
