@@ -1,8 +1,8 @@
 function Comments() {
   return (
     <div className="grid gap-2">
-      <h3>Yorumlar</h3>
-      <h3>Yorumlar</h3>
+      <h4>Yorumlar</h4>
+      <h4>Yorumlar</h4>
     </div>
   );
 }
